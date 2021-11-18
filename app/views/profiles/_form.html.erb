@@ -1,0 +1,30 @@
+<%= form_with model: @profile, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "ニックネーム" %><br>
+    <%= f.text_field :name %>
+  </div><!-- form-group -->
+  <div class="form-group">
+    <%= f.label :learning_history, "学習歴(年)" %><br>
+    <%= f.number_field :learning_history %>
+  </div><!-- form-group -->
+  <div class="form-group">
+    <%= f.label :purpose, "Rails学習の目的" %><br>
+    <%= f.text_field :purpose %>
+  </div><!-- form-group -->
+  <div class="form-group">
+    <%= f.label :image, "プロフィール画像" %><br>
+    <%= f.file_field :image %>
+  </div><!-- form-group -->
+
+<%#f.objectは投稿されたデータのこと %>
+  <% if f.object.image.attached? %>
+  <div class="image-preview">
+    <span>現在アップロードされている画像</span>
+    <%= image_tag f.object.image %>
+  </div><!-- image-preview -->
+　<% end %>
+
+  <div class="submit-block">
+    <%= f.submit class: ["btn--red", "bold"] %>
+  </div><!-- submit-block -->
+<% end %>

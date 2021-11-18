@@ -1,0 +1,29 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#posts-new, #posts-edit, #posts-create, #posts-update {
+  form {
+    textarea {
+      width: 100%;
+    }
+    .btn--red {
+      margin-top: 3px;
+      border-bottom: 2px solid #9f000c;
+      background: #9f000c;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: none;
+    }
+    .bold {
+      font-weight: bold;
+    }
+
+
+    .btn--radius {
+      border-radius: 100vh;
+    }
+
+  }
+}

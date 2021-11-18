@@ -1,0 +1,5 @@
+<%= form_with model: @post, local: true do |f| %>
+  <%= f.text_area :content, rows: 5 %>
+  <%= f.file_field :images, multiple: true %>
+  <%= f.submit class: ["btn--red", "bold"] %>
+<% end %>
