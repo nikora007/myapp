@@ -2,6 +2,19 @@
   <div class="content-block">
     <% @posts.each do |post| %>
         <div class="content">
+
+            <div class="text">
+              <p><%= post.content %></p>
+            </div><!-- text --->
+          <!--  画像アップロードここから  --------------------------->
+            <% if post.images.attached? %>
+              <div class="images">
+                <% post.images.each do |image| %>
+                  <%= image_tag image %>
+                <% end %>
+              </div><!-- images -->
+            <% end %><!-- ifのend -->
+            <!--  画像アップロードここまで  --------------------------->
             <div class="user-about">
                 <div class="image">
                   <% if post.user.image.attached? %>
@@ -27,18 +40,6 @@
                 </div><!-- profile -->
             </div><!-- user-about -->
 
-            <div class="text">
-              <p><%= post.content %></p>
-            </div><!-- text --->
-          <!--  画像アップロードここから  --------------------------->
-            <% if post.images.attached? %>
-              <div class="images">
-                <% post.images.each do |image| %>
-                  <%= image_tag image %>
-                <% end %>
-              </div><!-- images -->
-            <% end %><!-- ifのend -->
-            <!--  画像アップロードここまで  --------------------------->
 
             <div claass="action-menu">
               <div class="like">
